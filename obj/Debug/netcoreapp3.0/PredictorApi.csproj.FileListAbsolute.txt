@@ -16,3 +16,13 @@
 /home/aleksandar/Repositories/PredictorApi/obj/Debug/netcoreapp3.0/PredictorApi.RazorTargetAssemblyInfo.cache
 /home/aleksandar/Repositories/PredictorApi/obj/Debug/netcoreapp3.0/PredictorApi.dll
 /home/aleksandar/Repositories/PredictorApi/obj/Debug/netcoreapp3.0/PredictorApi.pdb
+/home/aleksandar/Repositories/PredictorApi/bin/Debug/netcoreapp3.0/Antlr3.Runtime.dll
+/home/aleksandar/Repositories/PredictorApi/bin/Debug/netcoreapp3.0/Iesi.Collections.dll
+/home/aleksandar/Repositories/PredictorApi/bin/Debug/netcoreapp3.0/NHibernate.dll
+/home/aleksandar/Repositories/PredictorApi/bin/Debug/netcoreapp3.0/Remotion.Linq.dll
+/home/aleksandar/Repositories/PredictorApi/bin/Debug/netcoreapp3.0/Remotion.Linq.EagerFetching.dll
+/home/aleksandar/Repositories/PredictorApi/bin/Debug/netcoreapp3.0/System.Configuration.ConfigurationManager.dll
+/home/aleksandar/Repositories/PredictorApi/bin/Debug/netcoreapp3.0/System.Security.Cryptography.ProtectedData.dll
+/home/aleksandar/Repositories/PredictorApi/bin/Debug/netcoreapp3.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+/home/aleksandar/Repositories/PredictorApi/obj/Debug/netcoreapp3.0/PredictorApi.csproj.CopyComplete
+/home/aleksandar/Repositories/PredictorApi/bin/Debug/netcoreapp3.0/FluentNHibernate.dll
