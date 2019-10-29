@@ -3,7 +3,10 @@ using System.Reflection;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
+using NHibernate.Dialect;
+using NHibernate.Driver;
 using PredictorApi.Layer1;
+using PredictorApi.Layer2;
 
 public class NHibernateHelper
 {
@@ -25,9 +28,22 @@ public class NHibernateHelper
     {
         _sessionFactory = Fluently
         .Configure()
-        .Database(MySQLConfiguration.Standard.ShowSql()
-        .ConnectionString("Server=localhost; Port=3306;Database=test_db; Uid=root; Pwd=;"))
-        .Mappings(m => m.FluentMappings.AddFromAssemblyOf<User>())
+        .Database(
+            MySQLConfiguration.Standard
+            .Driver<MySqlDataDriver>()
+            .Dialect<MySQLDialect>()
+            .ConnectionString
+            (
+                c=>c
+                .Server("localhost")
+                .Database("test_db")
+                .Username("test_user")
+                .Password("test_user")
+            )
+            .ShowSql()
+            .FormatSql()
+        )
+        .Mappings(m => m.FluentMappings.AddFromAssemblyOf<UserMap>())
         .BuildSessionFactory();
     }
 
