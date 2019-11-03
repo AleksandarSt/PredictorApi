@@ -7,7 +7,7 @@ namespace PredictorApi.Controllers {
     [Route ("[controller]")]
     public class UserController : Controller {
         [HttpGet]
-        public ActionResult GetUSerById (int userId) {
+        public ActionResult GetUserById (int userId) {
 
             using (var session = NHibernateHelper.OpenSession ()) {
                 using (session.BeginTransaction ()) {

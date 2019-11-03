@@ -61,8 +61,6 @@ namespace PredictorApi
             {
                 endpoints.MapControllers();
             });
-
-            
         }
     }
 }
