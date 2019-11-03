@@ -35,10 +35,10 @@ public class NHibernateHelper
             .ConnectionString
             (
                 c=>c
-                .Server("localhost")
-                .Database("test_db")
-                .Username("test_user")
-                .Password("test_user")
+                .Server("78.83.59.100; Port=3307")
+                .Database("soccer")
+                .Username("web")
+                .Password("w3bsql")
             )
             .ShowSql()
             .FormatSql()
