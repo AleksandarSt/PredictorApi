@@ -10,7 +10,7 @@ namespace PredictorApi.Controllers {
         public ActionResult GetUserById (int userId) {
 
             using (var session = NHibernateHelper.OpenSession ()) {
-                using (session.BeginTransaction ()) {
+            using (session.BeginTransaction ()) {
                     var user = session.Get<User> (userId);
 
                     return Ok (user);
