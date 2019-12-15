@@ -29,7 +29,7 @@ public class UserService:IUserService
         {
             using (session.BeginTransaction ()) 
             {
-                var users = session.Query<User>().ToList();
+                var users = session.Query<User>().Take(10).ToList();
 
                 return users;
             }

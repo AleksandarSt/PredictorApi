@@ -1,11 +1,8 @@
-using System;
-using System.Reflection;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using NHibernate.Dialect;
 using NHibernate.Driver;
-using PredictorApi.Layer1;
 using PredictorApi.Layer2;
 
 public class NHibernateHelper
