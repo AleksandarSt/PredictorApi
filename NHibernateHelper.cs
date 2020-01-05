@@ -9,10 +9,11 @@ public class NHibernateHelper
 {
     private static ISessionFactory _sessionFactory;
 
-    private static ISessionFactory SessionFactory 
+    private static ISessionFactory SessionFactory
     {
-        get {
-            if(_sessionFactory==null)
+        get
+        {
+            if (_sessionFactory == null)
             {
                 InitilizeSessionFactory();
             }
@@ -31,11 +32,11 @@ public class NHibernateHelper
             .Dialect<MySQLDialect>()
             .ConnectionString
             (
-                c=>c
-                .Server("78.83.59.100; Port=3307")
-                .Database("soccer")
-                .Username("web")
-                .Password("w3bsql")
+                c => c
+                .Server("localhost; Port=3306")//.Server("78.83.59.100; Port=3307")
+                .Database("test_db")//.Database("soccer")
+                .Username("test_user")//.Username("web")
+                .Password("test_user")//.Password("w3bsql")
             )
             .ShowSql()
             .FormatSql()

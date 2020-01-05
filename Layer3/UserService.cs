@@ -5,18 +5,18 @@ using PredictorApi.Layer1;
 public interface IUserService
 {
     User GetUserById(int id);
-    List<User>GetUsers();
+    List<User> GetUsers();
 }
 
-public class UserService:IUserService
+public class UserService : IUserService
 {
     public User GetUserById(int id)
     {
-        using (var session = NHibernateHelper.OpenSession ()) 
+        using (var session = NHibernateHelper.OpenSession())
         {
-            using (session.BeginTransaction ()) 
+            using (session.BeginTransaction())
             {
-                var user = session.Get<User> (id);
+                var user = session.Get<User>(id);
 
                 return user;
             }
@@ -25,9 +25,9 @@ public class UserService:IUserService
 
     public List<User> GetUsers()
     {
-        using (var session = NHibernateHelper.OpenSession ()) 
+        using (var session = NHibernateHelper.OpenSession())
         {
-            using (session.BeginTransaction ()) 
+            using (session.BeginTransaction())
             {
                 var users = session.Query<User>().Take(10).ToList();
 

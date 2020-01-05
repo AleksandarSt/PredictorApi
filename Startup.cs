@@ -23,28 +23,30 @@ namespace PredictorApi
         {
             services.AddControllers();
 
-            services.AddSwaggerGen(c=>  
-                {  
-                    c.SwaggerDoc("v1",new OpenApiInfo  
-                    {  
-                        Version = "v1",  
-                        Title = "PredictorApi",  
-                        Description = "Testing"  
-                    });  
-                });
-
-                services.AddCors(options =>
+            services.AddSwaggerGen(c =>
                 {
-                    options.AddPolicy(MyAllowSpecificOrigins,
-                    builder =>
+                    c.SwaggerDoc("v1", new OpenApiInfo
                     {
-                        builder.AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader();
+                        Version = "v1",
+                        Title = "PredictorApi",
+                        Description = "Testing"
                     });
                 });
 
-                services.AddTransient<IUserService, UserService>();
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                builder =>
+                {
+                    builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+                });
+            });
+
+            //Add Services Here
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<ITeamService, TeamService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,11 +64,12 @@ namespace PredictorApi
             app.UseSwagger(null);
 
             app.UseSwaggerUI(
-                c=>{
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "PredictorApi");
-                c.RoutePrefix = string.Empty;
+                c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "PredictorApi");
+                    c.RoutePrefix = string.Empty;
                 }
-            );            
+            );
 
             app.UseRouting();
 
@@ -77,7 +80,7 @@ namespace PredictorApi
                 endpoints.MapControllers();
             });
 
-            
+
         }
     }
 }
