@@ -34,10 +34,13 @@ public class TeamService : ITeamService
                 var id = teamDto.Id;
                 var team = session.Query<Team>().Where(x => x.Id == id).First();
 
-                team.Name = teamDto.Name;
+
+
                 team.DisplayName = teamDto.DisplayName;
+                team.Name = teamDto.Name;
 
                 session.SaveOrUpdate(team);
+                session.Transaction.Commit();
 
                 return Task.CompletedTask;
             }

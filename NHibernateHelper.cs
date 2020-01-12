@@ -33,10 +33,16 @@ public class NHibernateHelper
             .ConnectionString
             (
                 c => c
-                .Server("localhost; Port=3306")//.Server("78.83.59.100; Port=3307")
-                .Database("test_db")//.Database("soccer")
-                .Username("test_user")//.Username("web")
-                .Password("test_user")//.Password("w3bsql")
+               .Server("78.83.59.100; Port=3307")
+                .Database("soccer")
+               .Username("web")
+                .Password("w3bsql")
+
+                //local setting
+                /*.Server("localhost; Port=3306")
+                .Database("test_db")
+                .Username("test_user")
+                .Password("test_user"))*/
             )
             .ShowSql()
             .FormatSql()
