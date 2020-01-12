@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace PredictorApi.Controllers
@@ -22,7 +21,6 @@ namespace PredictorApi.Controllers
         public IActionResult UpdateTeam([FromBody] TeamDto teamDto)
         {
             //return Ok(_teamService.Save(new FormData(form))
-
 
             return Ok(_teamService.SaveTeam(teamDto));
         }
