@@ -18,37 +18,18 @@ namespace PredictorApi.Controllers
         }
 
         [HttpPost]
+        [Route("update-team")]
         public IActionResult UpdateTeam([FromBody] TeamDto teamDto)
         {
-            //return Ok(_teamService.Save(new FormData(form))
-
             return Ok(_teamService.SaveTeam(teamDto));
         }
 
-        /*
         [HttpPost]
-        public IActionResult Insert(IFormCollection form)
+        [Route("add-team")]
+        public IActionResult AddTeam([FromBody] TeamDto teamDto)
         {
-            if (!_channelsService.Security.CanManageChannels)
-                return Challenge();
-            return Ok(_channelsService.Save(new FormData(form)));
+            return Ok(_teamService.SaveTeam(teamDto));
         }
-        */
-        /*[HttpPost]
-         public IActionResult GetAnswer([FromBody] Answer data)
-        {
-            var answer = new Answer()
-            {
-                MailInfoId = data.Id,
-                IsApproved = data.IsApproved,
-                Reason = data.Reason,
-                Comment = data.Comment,
-                IsSpecialPriceList = data.IsSpecialPriceList
-            };
-
-            return Ok(_mailService.GetAnswer(answer));
-        } */
-
     }
     public class TeamDto
     {

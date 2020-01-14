@@ -32,9 +32,15 @@ public class TeamService : ITeamService
             using (session.BeginTransaction())
             {
                 var id = teamDto.Id;
-                var team = session.Query<Team>().Where(x => x.Id == id).First();
-
-
+                Team team;
+                if (id == 0)
+                {
+                    team = new Team();
+                }
+                else
+                {
+                    team = session.Query<Team>().Where(x => x.Id == id).First();
+                }
 
                 team.DisplayName = teamDto.DisplayName;
                 team.Name = teamDto.Name;
